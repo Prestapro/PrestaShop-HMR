@@ -64,15 +64,6 @@ let addHOT = (arr, disable) => {
 	return arr;
 };
 
-let postcssOptions = {
-	plugins: function() {
-		return [
-			require('postcss-flexibility')
-			, require('postcss-flexboxfixer')
-			, require('postcss-flexbugs-fixes')
-		];
-	}
-};
 
 module.exports = {
 	entry: {
@@ -104,7 +95,6 @@ module.exports = {
 					}
 				}, {
 					loader: 'postcss-loader'
-					, options: postcssOptions
 				}, {
 					loader: `sass-loader`
 					, options: {
@@ -127,7 +117,6 @@ module.exports = {
 					}
 				}, {
 					loader: 'postcss-loader'
-					, options: postcssOptions
 				}]
 			})
 		}]
