@@ -1,0 +1,64 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+.carousel {
+    margin-bottom: 24px;
+
+    box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, .15);
+    .direction {
+        z-index: auto;
+    }
+    .carousel-inner {
+        height: 340px;
+    }
+    .carousel-item {
+        height: 100%;
+        img {
+            width: 100%;
+            margin-left: 0;
+        }
+        .caption {
+            position: absolute;
+            bottom: 28px;
+            left: 90px;
+
+            max-width: 340px;
+
+            color: white;
+            .caption-description p {
+                color: white;
+            }
+        }
+    }
+    .carousel-control {
+        opacity: 1;
+        .icon-next,
+        .icon-prev {
+            &::before {
+                content: "";
+            }
+            i {
+                font-size: 50px;
+
+                color: white;
+            }
+            &:hover {
+                i {
+                    color: $brand-primary;
+                }
+            }
+        }
+        .icon-prev {
+            left: 16px;
+        }
+        .icon-next {
+            right: 32px;
+        }
+        &.left,
+        &.right {
+            background: none;
+        }
+    }
+}

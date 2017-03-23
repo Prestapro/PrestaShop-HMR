@@ -1,0 +1,94 @@
+var ref;
+const HOT = ((ref = module.parent.filename) != null ? ref.indexOf('hot.webpack.js') : void 0) !== -1;
+console.log('Webpack HOT : ',HOT,'\n');
+
+var webpack = require('webpack');
+var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
+var plugins = [];
+
+var production = true;
+
+if (production) {
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  );
+}
+if (HOT) {
+  plugins.push(new webpack.HotModuleReplacementPlugin())
+}
+
+plugins.push(
+  new ExtractTextPlugin(
+    path.join('..', 'css', 'theme.css')
+    ,{
+      disable: HOT // if hot enabled disable ExtractTextPlugin
+    }
+  ),
+  new webpack.OldWatchingPlugin()
+);
+
+// plugins.unshift({
+//   apply: (compiler) => { // min plugin clear folder
+//     let rimraf = require(`rimraf`);
+//     [`/`, `/../css`].forEach((subPath) => {
+//       rimraf.sync(path.resolve(compiler.options.output.path + subPath));
+//     });
+//   }
+// });
+
+
+let addHOT = (arr, disable) => {
+  if (HOT) {
+    arr.unshift('webpack/hot/dev-server', 'webpack-hot-middleware/client');
+  }
+  return arr;
+};
+
+module.exports = {
+  entry: {
+    theme: addHOT(['./js/theme.js'])
+  },
+  output: {
+    path: path.resolve(__dirname + '/../assets/js'),
+    filename: 'theme.js'
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: (HOT? ['monkey-hot-loader','babel-loader']: ['babel-loader'])
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+        "style",
+        "css?sourceMap!sass?sourceMap"
+      )
+    }, {
+      test: /.(jpg|png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+      loader: 'file-loader?name=../css/[hash].[ext]'
+    }, {
+      test: /\.css$/,
+      loader: "style-loader!css-loader!postcss-loader"
+    }]
+  },
+  postcss: function() {
+    return [require('postcss-flexibility')];
+  },
+  externals: {
+    prestashop: 'prestashop',
+    $: '$',
+    jquery: 'jQuery'
+  },
+  devtool: HOT ? 'cheap-module-inline-source-map' : 'source-map',
+  plugins: plugins,
+  resolve: {
+    extensions: ['', '.js', '.scss']
+  }
+};

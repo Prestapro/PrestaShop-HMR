@@ -1,2 +1,1 @@
 # PrestaShop-HMR
-# PrestaShop-HMR

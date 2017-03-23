@@ -1,0 +1,53 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+.contact-rich {
+    margin-bottom: 32px;
+
+    color: $gray-dark;
+    h4 {
+        margin-bottom: 32px;
+
+        text-transform: uppercase;
+
+        color: $gray-darker;
+    }
+    .block {
+        height: auto;
+        overflow: hidden;
+        .icon {
+            float: left;
+            width: 56px;
+            i {
+                font-size: 32px;
+            }
+        }
+        .data {
+            width: auto;
+            overflow: hidden;
+
+            font-size: $font-size-sm;
+
+            color: $gray-darker;
+            &.email {
+                padding-top: 6px;
+            }
+        }
+    }
+}
+.contact-form {
+    width: 100%;
+    padding: 16px;
+
+    color: $gray-dark;
+    background: white;
+
+
+    h3 {
+        text-transform: uppercase;
+
+        color: $gray-darker;
+    }
+}

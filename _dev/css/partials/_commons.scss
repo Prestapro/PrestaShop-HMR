@@ -1,0 +1,216 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "variables";
+
+[class^=hidden-] {
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.lang-rtl {
+    * {
+        direction: rtl !important;
+    }
+    main {
+        text-align: right !important;
+    }
+}
+body,
+html {
+    height: 100%;
+}
+
+body {
+  line-height: 18px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  font-weight: normal;
+}
+
+ul {
+}
+a:hover {
+}
+p {
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+}
+.color,
+.custom-checkbox input[type="checkbox"] + span.color {
+    &.active,
+    &:hover {
+    }
+}
+.facet-label {
+    &.active,
+    &:hover {
+        .custom-checkbox span.color {
+        }
+    }
+}
+.h1,
+.h2,
+.h3 {
+}
+.h4 {
+}
+.btn-primary,
+.btn-secondary {
+    .material-icons {
+    }
+}
+.btn-tertiary {
+    .material-icons {
+    }
+}
+
+label,
+.label {
+}
+small.label,
+small.value {
+}
+.form-control-label {
+}
+.form-control {
+    &:focus {
+    }
+}
+.input-group {
+    &.focus {
+    }
+    .form-control:focus {
+    }
+    .input-group-btn > .btn {
+    }
+}
+.form-control-select {
+}
+.form-control-valign {
+}
+.form-control-comment {
+}
+.form-control-submit {
+    &.disabled {
+    }
+}
+.form-group {
+    &.has-error {
+        input,
+        select {
+        }
+        .help-block {
+        }
+    }
+}
+.group-span-filestyle {
+    label {
+    }
+    .btn-default {
+    }
+}
+.bootstrap-touchspin {
+    input {
+        &:focus {
+        }
+        &.form-control {
+        }
+    }
+    .btn-touchspin {
+        &:hover {
+        }
+    }
+    .input-group-btn-vertical {
+        .bootstrap-touchspin-up {
+        }
+        .bootstrap-touchspin-down {
+        }
+        .touchspin-up {
+            &:after {
+                content: "\E5CE";
+            }
+        }
+        .touchspin-down {
+            &:after {
+                content: "\E5CF";
+            }
+        }
+        i {
+        }
+    }
+}
+.custom-radio {
+    input[type="radio"] {
+    }
+    input[type="radio"]:checked + span {
+    }
+}
+.custom-checkbox {
+    input[type="checkbox"] {
+        + span {
+            .checkbox-checked {
+            }
+        }
+        &:checked + span {
+            .checkbox-checked {
+            }
+        }
+    }
+    label {
+    }
+}
+.text-muted {
+}
+.done {
+}
+.thumb-mask {
+    > .mask {
+        img {
+        }
+    }
+}
+.definition-list {
+    dl {
+        dt {
+        }
+        dd,
+        dt {
+            &:nth-of-type(even) {
+            }
+        }
+    }
+}
+.help-block {
+}
+.btn.disabled,
+.btn.disabled:hover {
+}
+.alert-warning {
+    .material-icons {
+    }
+    .alert-text {
+    }
+    .alert-link {
+    }
+    ul li:last-child .alert-link {
+    }
+    .warning-buttons {
+    }
+}
+
+.btn-tertiary-outline {
+    &:hover {
+    }
+}
+.alert {
+}
+.nav-item {
+    .nav-link,
+    .nav-separtor {
+        &.active {
+        }
+    }
+}

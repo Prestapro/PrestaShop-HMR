@@ -1,0 +1,30 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+.customization-modal {
+    .modal-content {
+        border: 1px solid $gray-lighter;
+        border-radius: 0;
+        .modal-body {
+            padding-top: 0;
+            .product-customization-line {
+                padding-top: 15px;
+                padding-bottom: 15px;
+
+                border-bottom: 1px solid $gray-lighter;
+                .label {
+                    font-weight: bold;
+
+                    text-align: right;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}

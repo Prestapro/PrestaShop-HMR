@@ -1,0 +1,50 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+#custom-text {
+    padding: 50px 50px;
+    margin-bottom: 24px;
+
+    text-align: center;
+
+    border-radius: 2px;
+    background: white;
+    h3 {
+        font-size: 25px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        color: $gray-darker;
+    }
+    p {
+        font-size: 1.1em;
+        font-weight: 400;
+
+        color: $gray-darker;
+        .dark {
+            font-weight: 400;
+
+            color: $gray;
+        }
+    }
+}
+.page-content.page-cms {
+    padding: 20px;
+
+    text-align: justify;
+
+    background: white;
+    .cms-box {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    #block-cmsinfo {
+        padding: $medium-space $large-space;
+    }
+}

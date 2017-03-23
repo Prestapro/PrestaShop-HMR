@@ -1,0 +1,211 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+.products{
+   display: flex;
+   flex-wrap: wrap; 
+}
+
+#products,
+.featured-products,
+.product-accessories,
+.product-miniature {
+    .products {
+    }
+    .product-thumbnail {
+        display: block;
+    }
+    .product-title a {
+        font-size: $font-size-sm;
+        font-weight: 400;
+
+        text-align: center;
+        text-decoration: none;
+
+        color: $gray;
+    }
+    .thumbnail-container {
+        position: relative;
+
+        width: 257px;
+        height: 318px;
+        margin-bottom: 25px;
+        &:hover {
+            .highlighted-informations {
+                bottom: 90px;
+                &::after {
+                    opacity: 1;
+                }
+                &.no-variants {
+                    bottom: 70px;
+                }
+            }
+            .product-description {
+            }
+        }
+    }
+    .products-section-title {
+        margin-bottom: 24px;
+
+        text-align: center;
+    }
+    .product-title {
+        margin-top: 16px;
+
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .product-price-and-shipping {
+        font-weight: 700;
+
+        text-align: center;
+
+        color: $gray-darker;
+    }
+    .variant-links {
+        position: relative;
+        top: .25em;
+
+        width: 100%;
+        min-height: 40px;
+        padding-top: 3px;
+
+        text-align: center;
+    }
+    .highlighted-informations {
+        position: absolute;
+        bottom: 20px;
+        z-index: 0;
+
+        width: 257px;
+        height: 50px;
+        padding-top: 5px;
+        transition: bottom .3s;
+        text-align: center;
+        .quick-view {
+            font-size: $base-font-size;
+
+            color: $gray-dark;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .product-description {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+
+        width: 257px;
+        height: 70px;
+
+        background: white;
+    }
+    img {
+        margin-left: 4px;
+    }
+
+    .product-miniature {
+        margin: 0 10px;
+        .discount {
+            display: none;
+        }
+        .product-flags .new,
+        .online-only,
+        .on-sale,
+        .discount-percentage {
+            position: absolute;
+            top: 7px;
+            left: -7px;
+
+            display: block;
+            min-width: 50px;
+            min-height: 30px;
+            padding: 5px 7px;
+
+            font-size: $base-font-size;
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            color: white;
+            background: $brand-primary;
+
+
+            &.discount-percentage {
+                z-index: 2;
+
+                background: $brand-secondary;
+            }
+            &.on-sale {
+                top: 0;
+                left: 0;
+
+                width: 100%;
+
+                text-align: center;
+
+                background: $brand-secondary;
+            }
+            &.online-only {
+                margin-top: 208px;
+                margin-left: 139px;
+
+                font-size: $font-size-xs;
+                &::before {
+                    margin: 5px;
+
+                    font-family: "Material Icons";
+
+                    content: "\E30A";
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .comments_note {
+        text-align: center;
+
+        color: $gray;
+    }
+    .regular-price {
+        font-size: $font-size-sm;
+
+        text-decoration: line-through;
+
+        color: $gray;
+    }
+    .count {
+        position: relative;
+        bottom: 8px;
+
+        font-weight: 700;
+
+        color: $gray-dark;
+    }
+    .all-product-link {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        clear: both;
+
+        font-weight: 700;
+
+        color: $gray-dark;
+    }
+}
+
+@include
+ media-breakpoint-down(sm) {
+    #products,
+    .featured-products,
+    .product-accessories {
+        .thumbnail-container {
+            .product-description {
+                box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, .2);
+            }
+        }
+    }
+}

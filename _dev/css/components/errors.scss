@@ -1,0 +1,40 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+#products,
+#pagenotfound {
+    #main {
+        .page-header {
+            margin: 32px 0 48px;
+        }
+        .page-content {
+            margin-bottom: 160px;
+        }
+    }
+    .page-not-found {
+        max-width: 570px;
+        padding: 16px;
+        margin: 0 auto;
+
+        font-size: $font-size-sm;
+
+        color: $gray-dark;
+        background: white;
+
+
+        h4 {
+            margin: 8px 0 16px;
+
+            font-size: $base-font-size;
+            font-weight: 700;
+        }
+        .search-widget {
+            float: none;
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+#block-reassurance {
+    margin-top: 32px;
+    img {
+        width: 25px;
+        margin-right: 10px;
+
+        opacity: .7;
+    }
+    li {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+        &:last-child {
+            border: 0;
+        }
+    }
+    li .block-reassurance-item {
+        padding: 1rem 1.5rem;
+    }
+    #product & {
+        background: white;
+
+
+        span {
+            font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "../partials/variables";
+
+.quickview {
+    .modal-dialog {
+        width: calc(100% - 30px);
+        max-width: 1024px;
+    }
+    .modal-content {
+        min-height: 450px;
+
+        background: $gray-light;
+    }
+    .modal-header {
+        padding: $small-space;
+
+        border: none;
+    }
+    .modal-body {
+        min-height: 380px;
+    }
+    .modal-footer {
+        border-top: 1px solid rgba($gray,.3);
+    }
+    .layer {
+        display: none;
+    }
+    .product-cover img {
+        width: 95%;
+    }
+    .images-container {
+        position: absolute;
+        z-index: 1;
+
+        min-height: 350px;
+
+
+        .product-images > li.thumb-container > .thumb {
+            width: 79px;
+            margin-bottom: 13px;
+
+            background: white;
+        }
+    }
+    .mask {
+        width: 33%;
+        height: 360px;
+        margin-left: $small-space;
+        overflow: hidden;
+    }
+    .arrows {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        z-index: 0;
+
+        height: 360px;
+        .arrow-up {
+            margin-top: -50px;
+
+            cursor: pointer;
+
+            opacity: .2;
+        }
+        .arrow-down {
+            position: absolute;
+            bottom: -30px;
+
+            cursor: pointer;
+        }
+    }
+    .social-sharing {
+        margin-top: 0;
+        margin-left: $extra-large-space;
+    }
+}
