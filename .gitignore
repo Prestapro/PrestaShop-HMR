@@ -1,2 +1,4 @@
 _dev/node_modules
 .DS_Store
+_dev/tmp/
+_dev/yarn.lock
