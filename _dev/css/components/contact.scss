@@ -4,50 +4,41 @@
 @import "../partials/variables";
 
 .contact-rich {
-    margin-bottom: 32px;
-
-    color: $gray-dark;
-    h4 {
-        margin-bottom: 32px;
-
-        text-transform: uppercase;
-
-        color: $gray-darker;
+  color: $gray-dark;
+  margin-bottom: rem(32px);
+  h4 {
+    text-transform: uppercase;
+    color: $gray-darker;
+    margin-bottom: rem(32px);
+  }
+  .block {
+    height: auto;
+    overflow: hidden;
+    .icon {
+      float: left;
+      width: rem(56px);
+      i {
+        font-size: rem(32px);
+      }
     }
-    .block {
-        height: auto;
-        overflow: hidden;
-        .icon {
-            float: left;
-            width: 56px;
-            i {
-                font-size: 32px;
-            }
-        }
-        .data {
-            width: auto;
-            overflow: hidden;
-
-            font-size: $font-size-sm;
-
-            color: $gray-darker;
-            &.email {
-                padding-top: 6px;
-            }
-        }
+    .data {
+      color: $gray-darker;
+      font-size: $font-size-sm;
+      width: auto;
+      overflow: hidden;
+      &.email{
+        padding-top: rem(6px);
+      }
     }
+  }
 }
 .contact-form {
-    width: 100%;
-    padding: 16px;
-
-    color: $gray-dark;
-    background: white;
-
-
-    h3 {
-        text-transform: uppercase;
-
-        color: $gray-darker;
-    }
+  background: white;
+  padding: rem(16px);
+  color: $gray-dark;
+  width: 100%;
+  h3 {
+    text-transform: uppercase;
+    color: $gray-darker;
+  }
 }

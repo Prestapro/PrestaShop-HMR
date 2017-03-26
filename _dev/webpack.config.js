@@ -69,6 +69,7 @@ module.exports = {
 	entry: {
 		theme: addHOT(['./js/theme.js'])
 	}
+	, context: path.join(__dirname, '.')
 	, output: {
 		path: path.resolve(__dirname + '/../assets/js')
 		, filename: 'theme.js'
@@ -90,7 +91,7 @@ module.exports = {
 				, use: [{
 					loader: `css-loader`
 					, options: {
-						sourceMap: true
+						sourceMap: false
 						, importLoaders: 2
 					}
 				}, {

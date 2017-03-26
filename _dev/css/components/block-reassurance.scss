@@ -3,30 +3,28 @@
 @import "~bootstrap/scss/variables";
 @import "../partials/variables";
 
-#block-reassurance {
-    margin-top: 32px;
-    img {
-        width: 25px;
-        margin-right: 10px;
+#block-reassurance{
+  margin-top: rem(32px);
+  img{
+    opacity: .7;
+    width: rem(25px);
+    margin-right: rem(10px);
+  }
+  li{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-        opacity: .7;
+    &:last-child {
+      border: 0;
     }
-    li {
-        border-bottom: 1px solid rgba(0, 0, 0, .1);
-
-        &:last-child {
-            border: 0;
-        }
+  }
+  li .block-reassurance-item{
+    padding: 1rem 1.5rem;
+  }
+  #product &{
+    @include box-shadow;
+    background: white;
+    span{
+      font-weight: 700;
     }
-    li .block-reassurance-item {
-        padding: 1rem 1.5rem;
-    }
-    #product & {
-        background: white;
-
-
-        span {
-            font-weight: 700;
-        }
-    }
+  }
 }
