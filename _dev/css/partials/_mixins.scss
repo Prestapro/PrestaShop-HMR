@@ -1,40 +1,39 @@
-@import "variables";
-
-
 @mixin search-box {
-    form {
-        position: relative;
-        input[type=text] {
-            min-width: 255px;
-            padding: 10px;
-
-            color: $gray;
-            border: none;
-            background: $gray-light;
-            &:focus {
-                color: $gray-darker;
-                outline: 3px $brand-primary solid;
-                background: white;
-                + button .search {
-                    color: $brand-primary;
-                }
-            }
+  form {
+    position: relative;
+    input[type=text] {
+      &:focus {
+        outline: 3px $brand-primary solid;
+        color: $gray-darker;
+        background: white;
+        + button .search {
+          color: $brand-primary;
         }
-        button[type=submit] {
-            position: absolute;
-            right: 2px;
-            bottom: 5px;
-
-            color: $gray-dark;
-            border: none;
-            background: none;
-            .search:hover {
-                color: $brand-primary;
-            }
-        }
+      }
+      border: none;
+      padding: 10px;
+      min-width: 255px;
+      background: $gray-light;
+      color: $gray;
+      @include placeholder {
+        color: rgba($gray, 0.5);
+        text-indent: rem(10px);
+      }
     }
+    button[type=submit] {
+      position: absolute;
+      background: none;
+      border: none;
+      bottom: rem(5px);
+      right: rem(2px);
+      color: $gray-dark;
+      .search:hover {
+        color: $brand-primary;
+      }
+    }
+  }
 }
 
 @mixin box-shadow {
-    box-shadow: 2px 2px 11px 0 rgba(0, 0, 0, .1);
+  box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
 }

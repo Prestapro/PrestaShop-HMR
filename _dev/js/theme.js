@@ -24,11 +24,10 @@
  */
 import 'expose-loader?Tether!tether';
 import 'bootstrap/dist/js/bootstrap.min';
-//import 'flexibility';
+import 'flexibility';
 import 'bootstrap-touchspin';
 
-import '../css/partials/_variables';
-import "../css/partials/_mixins";
+import "bootstrap/scss/bootstrap";
 import "../css/partials/_commons";
 
 import "../css/components/drop-down";
@@ -45,7 +44,7 @@ import "../css/components/cart";
 import "../css/components/block-reassurance";
 import "../css/components/quickview";
 import "../css/components/stores";
-//import "../css/components/footer";
+import "../css/components/footer";
 import "../css/components/contact";
 import "../css/components/errors";
 import "../css/components/customization-modal";

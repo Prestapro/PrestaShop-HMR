@@ -4,75 +4,66 @@
 @import "../partials/variables";
 
 .quickview {
-    .modal-dialog {
-        width: calc(100% - 30px);
-        max-width: 1024px;
+  .modal-dialog {
+    width: calc(100% - 30px);
+    max-width: rem(1024px);
+  }
+  .modal-content {
+    background: $gray-light;
+    min-height: rem(450px);
+  }
+  .modal-header {
+    border: none;
+    padding: $small-space;
+  }
+  .modal-body {
+    min-height: rem(380px);
+  }
+  .modal-footer {
+    border-top: 1px solid rgba($gray,.3);
+  }
+  .layer {
+    display: none;
+  }
+  .product-cover img {
+    width: 95%;
+  }
+  .images-container {
+    @include display(flex);
+    position: absolute;
+    z-index: 1;
+    min-height: rem(350px);
+    .product-images > li.thumb-container > .thumb {
+      width: rem(79px);
+      margin-bottom: rem(13px);
+      background: white;
     }
-    .modal-content {
-        min-height: 450px;
-
-        background: $gray-light;
+  }
+  .mask {
+    width: 33%;
+    height: rem(360px);
+    overflow: hidden;
+    margin-left: $small-space;
+  }
+  .arrows {
+    position: absolute;
+    top: 0;
+    height: rem(360px);
+    right: rem(80px);
+    z-index: 0;
+    .arrow-up {
+      margin-top: rem(-50px);
+      cursor: pointer;
+      opacity: 0.2;
     }
-    .modal-header {
-        padding: $small-space;
-
-        border: none;
+    .arrow-down {
+      position: absolute;
+      bottom: rem(-30px);
+      cursor: pointer;
     }
-    .modal-body {
-        min-height: 380px;
-    }
-    .modal-footer {
-        border-top: 1px solid rgba($gray,.3);
-    }
-    .layer {
-        display: none;
-    }
-    .product-cover img {
-        width: 95%;
-    }
-    .images-container {
-        position: absolute;
-        z-index: 1;
-
-        min-height: 350px;
-
-
-        .product-images > li.thumb-container > .thumb {
-            width: 79px;
-            margin-bottom: 13px;
-
-            background: white;
-        }
-    }
-    .mask {
-        width: 33%;
-        height: 360px;
-        margin-left: $small-space;
-        overflow: hidden;
-    }
-    .arrows {
-        position: absolute;
-        top: 0;
-        right: 80px;
-        z-index: 0;
-
-        height: 360px;
-        .arrow-up {
-            margin-top: -50px;
-
-            cursor: pointer;
-
-            opacity: .2;
-        }
-        .arrow-down {
-            position: absolute;
-            bottom: -30px;
-
-            cursor: pointer;
-        }
-    }
-    .social-sharing {
-        margin-top: 0;
-        margin-left: $extra-large-space;
-    }
+  }
+  .social-sharing {
+    margin-top: 0;
+    margin-left: $extra-large-space;
+  }
 }
